@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Product.Product;
+import Product.ProductsKind;
 import Product.ShoppingProduct;
+import Product.SpecialtyProduct;
 
 public class ProductManager {
 	ArrayList<Product> products = new ArrayList<Product>();
@@ -24,19 +26,21 @@ public class ProductManager {
 			System.out.println("Select num for Product Kind 1~3:");
 			kind = input.nextInt();
 			if (kind == 1) {
-				product = new Product();
+				product = new Product(ProductsKind.convenienceProduct);
 				product.getUserInput(input);
 				products.add(product);
 				break;
 			}
 			else if (kind == 2) {
-				product = new ShoppingProduct();
+				product = new ShoppingProduct(ProductsKind.shoppingProduct);
 				product.getUserInput(input);
 				products.add(product);
 				break;
 			}
 			else if (kind == 3) {
-				//
+				product = new SpecialtyProduct(ProductsKind.specialtyProduct);
+				product.getUserInput(input);
+				products.add(product);
 				break;
 			}
 			else {

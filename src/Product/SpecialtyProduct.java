@@ -2,14 +2,14 @@ package Product;
 
 import java.util.Scanner;
 
-public class ShoppingProduct extends Product {
+public class SpecialtyProduct extends Product {
 	
-	public ShoppingProduct(ProductsKind kind) {
+	public SpecialtyProduct(ProductsKind kind) {
 		super(kind);
 	}
 	
 	public void printInfo() {
-		ProductsKind skind = ProductsKind.shoppingProduct;
+		ProductsKind skind = ProductsKind.specialtyProduct;
 		System.out.printf("kind : %s name: %s id: %d manufacturer: %s\n", skind, name, id, manufacturer);
 	}
 	

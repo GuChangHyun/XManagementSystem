@@ -10,6 +10,10 @@ public class Product {
 
 	public Product() {
 	}
+	
+	public Product(ProductsKind kind) {
+		this.kind = kind;
+	}
 
 	public Product(String name, int id) {
 		this.name = name;
@@ -17,6 +21,13 @@ public class Product {
 	}
 
 	public Product(String name, int id, String manufacturer) {
+		this.name = name;
+		this.id = id;
+		this.manufacturer = manufacturer;
+	}
+	
+	public Product(ProductsKind kind, String name, int id, String manufacturer) {
+		this.kind = kind;
 		this.name = name;
 		this.id = id;
 		this.manufacturer = manufacturer;
@@ -54,8 +65,10 @@ public class Product {
 		this.manufacturer = manufacturer;
 	}
 	
+	
 	public void printInfo() {
-		System.out.printf("name: %s id: %d manufacturer: %s\n", name, id, manufacturer);
+		ProductsKind skind = ProductsKind.convenienceProduct;
+		System.out.printf("kind : %s name: %s id: %d manufacturer: %s\n", skind, name, id, manufacturer);
 	}
 	
 	public void getUserInput(Scanner input) {
