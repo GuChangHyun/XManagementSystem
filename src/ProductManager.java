@@ -136,4 +136,18 @@ public class ProductManager {
 //			System.out.println();
 //		}
 	}
+	
+	public void searchProducts() {
+		input.nextLine();
+		System.out.println("찾을 상품의 이름을 입력하세요.");
+		String pName = input.nextLine();
+		for(Product p : products) {
+			if(p.getName().equals(pName)){
+				System.out.println("찾으시는 상품 코드는 "+p.getId()+"입니다.");
+				return;		
+			}
+		}
+		System.out.println("해당하는 상품은 리스트에 존재하지 않습니다.");
+		return;
+	}
 }
