@@ -2,7 +2,7 @@ package Product;
 
 import java.util.Scanner;
 
-public class Product {
+public abstract class Product {
 	protected ProductsKind kind = ProductsKind.convenienceProduct;
 	protected String name;
 	protected int id;
@@ -66,10 +66,7 @@ public class Product {
 	}
 	
 	
-	public void printInfo() {
-		ProductsKind skind = ProductsKind.convenienceProduct;
-		System.out.printf("kind : %s name: %s id: %d manufacturer: %s\n", skind, name, id, manufacturer);
-	}
+	public abstract void printInfo();
 	
 	public void getUserInput(Scanner input) {
 		

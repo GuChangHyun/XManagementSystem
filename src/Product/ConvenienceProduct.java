@@ -2,14 +2,14 @@ package Product;
 
 import java.util.Scanner;
 
-public class ShoppingProduct extends Product implements ProductInput{
+public class ConvenienceProduct extends Product implements ProductInput{
 	
-	public ShoppingProduct(ProductsKind kind) {
+	public ConvenienceProduct(ProductsKind kind) {
 		super(kind);
 	}
 	
 	public void printInfo() {
-		ProductsKind skind = ProductsKind.shoppingProduct;
+		ProductsKind skind = ProductsKind.convenienceProduct;
 		System.out.printf("kind : %s name: %s id: %d manufacturer: %s\n", skind, name, id, manufacturer);
 	}
 	
@@ -39,4 +39,5 @@ public class ShoppingProduct extends Product implements ProductInput{
 			}
 		}
 	}
+
 }

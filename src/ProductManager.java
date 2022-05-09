@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Product.ConvenienceProduct;
 import Product.Product;
+import Product.ProductInput;
 import Product.ProductsKind;
 import Product.ShoppingProduct;
 import Product.SpecialtyProduct;
 
 public class ProductManager {
-	ArrayList<Product> products = new ArrayList<Product>();
+	ArrayList<ProductInput> products = new ArrayList<ProductInput>();
 	Scanner input;
 	//int[] ar = new int[10];
 	//int i = 0;
@@ -18,7 +20,7 @@ public class ProductManager {
 
 	public void addProduct() {
 		int kind = 0;
-		Product product;
+		ProductInput productInput;
 		while (kind != 1 && kind != 2 && kind != 3) {
 			System.out.println("1 for convenienceProduct");
 			System.out.println("2 for shoppingProduct");
@@ -26,21 +28,21 @@ public class ProductManager {
 			System.out.println("Select num for Product Kind 1~3:");
 			kind = input.nextInt();
 			if (kind == 1) {
-				product = new Product(ProductsKind.convenienceProduct);
-				product.getUserInput(input);
-				products.add(product);
+				productInput = new ConvenienceProduct(ProductsKind.convenienceProduct);
+				productInput.getUserInput(input);
+				products.add(productInput);
 				break;
 			}
 			else if (kind == 2) {
-				product = new ShoppingProduct(ProductsKind.shoppingProduct);
-				product.getUserInput(input);
-				products.add(product);
+				productInput = new ShoppingProduct(ProductsKind.shoppingProduct);
+				productInput.getUserInput(input);
+				products.add(productInput);
 				break;
 			}
 			else if (kind == 3) {
-				product = new SpecialtyProduct(ProductsKind.specialtyProduct);
-				product.getUserInput(input);
-				products.add(product);
+				productInput = new SpecialtyProduct(ProductsKind.specialtyProduct);
+				productInput.getUserInput(input);
+				products.add(productInput);
 				break;
 			}
 			else {
@@ -82,8 +84,8 @@ public class ProductManager {
 		System.out.print("Product ID :");
 		int productId = input.nextInt();
 		for (int i = 0; i<products.size(); i++) {
-			Product product = products.get(i);
-			if(product.getId() == productId) {
+			ProductInput productInput = products.get(i);
+			if(productInput.getId() == productId) {
 				int num = -1;
 				while (num != 4) {
 					System.out.println("**Product Info Edit Menu **");
@@ -96,17 +98,17 @@ public class ProductManager {
 					if (num == 1) {
 						System.out.print("Product ID : ");
 						int id = input.nextInt();
-						product.setId(id);
+						productInput.setId(id);
 					}
 					else if (num == 2) {
 						System.out.print("Product Name : ");
 						String name = input.next();
-						product.setName(name);
+						productInput.setName(name);
 					}
 					else if (num == 3) {
 						System.out.print("Product Manufacturer : ");
 						String manufacturer = input.next();
-						product.setManufacturer(manufacturer);
+						productInput.setManufacturer(manufacturer);
 					}
 					else {
 						continue;
@@ -141,7 +143,7 @@ public class ProductManager {
 		input.nextLine();
 		System.out.println("찾을 상품의 이름을 입력하세요.");
 		String pName = input.nextLine();
-		for(Product p : products) {
+		for(ProductInput p : products) {
 			if(p.getName().equals(pName)){
 				System.out.println("찾으시는 상품 코드는 "+p.getId()+"입니다.");
 				return;		

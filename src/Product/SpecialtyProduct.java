@@ -2,7 +2,7 @@ package Product;
 
 import java.util.Scanner;
 
-public class SpecialtyProduct extends Product {
+public class SpecialtyProduct extends Product implements ProductInput{
 	
 	public SpecialtyProduct(ProductsKind kind) {
 		super(kind);
